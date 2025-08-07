@@ -1,0 +1,15 @@
+Activity 1: Base 10 to Base 2
+75 (base 10) = 1001011 (base 2)
+
+Steps:
+- 75 ÷ 2 = 37 remainder 1
+- 37 ÷ 2 = 18 remainder 1
+- 18 ÷ 2 = 9  remainder 0
+- 9 ÷ 2  = 4  remainder 1
+- 4 ÷ 2  = 2  remainder 0
+- 2 ÷ 2  = 1  remainder 0
+- 1 ÷ 2  = 0  remainder 1 → reverse remainders: 1001011
+
+Binary to Decimal:
+110111011 = 1×2⁸ + 1×2⁷ + 0×2⁶ + 1×2⁵ + 1×2⁴ + 1×2³ + 0×2² + 1×2¹ + 1×2⁰
+= 256 + 128 + 0 + 32 + 16 + 8 + 0 + 2 + 1 = **443**

@@ -1,0 +1,12 @@
+Activity 2: Base 10 to Base 8
+75 (base 10) = 113 (base 8)
+
+Steps:
+- 75 ÷ 8 = 9 remainder 3
+- 9 ÷ 8 = 1 remainder 1
+- 1 ÷ 8 = 0 remainder 1 → reverse remainders: 113
+
+Octal to Decimal:
+1346742 (base 8)
+= 1×8⁶ + 3×8⁵ + 4×8⁴ + 6×8³ + 7×8² + 4×8¹ + 2×8⁰
+= 262144 + 98304 + 16384 + 3072 + 448 + 32 + 2 = **380386**

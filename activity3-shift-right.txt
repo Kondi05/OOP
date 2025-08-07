@@ -1,0 +1,14 @@
+Activity 3: Shift Right
+
+Original binary: 111011101011
+→ Decimal: 3819
+
+Shift right by 1:
+  111011101011 → 11101110101
+
+→ Result in binary: 11101110101
+→ Decimal: 1909
+
+Observation:
+Shifting right by 1 is equivalent to dividing by 2 (discarding remainder).
+3819 ÷ 2 = 1909.5 → Truncated to 1909.

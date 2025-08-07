@@ -1,0 +1,10 @@
+Activity 3: Base 10 to Base 16
+75 (base 10) = 4B (base 16)
+
+Steps:
+- 75 ÷ 16 = 4 remainder 11 → 11 = B → result: 4B
+
+Hex to Decimal:
+64FEA (base 16)
+= 6×16⁴ + 4×16³ + 15×16² + 14×16¹ + 10×16⁰
+= 393216 + 16384 + 3840 + 224 + 10 = **413674**

@@ -1,0 +1,19 @@
+Activity 4: Pseudocode for Base 10 to Base 2
+
+Input: A base-10 integer
+Output: A string representing the binary number
+
+Pseudocode:
+1. Initialize an empty string or list to store binary digits
+2. While number > 0:
+    a. Divide number by 2
+    b. Store the remainder (0 or 1)
+    c. Update number = number // 2
+3. Reverse the stored binary digits
+4. Output the binary string
+
+Storage: The binary number is stored as a list of digits or string.
+
+To extend for other bases:
+- Replace division/modulus by 2 with division/modulus by target base
+- Use a digit-to-char map (for bases > 10)

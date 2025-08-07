@@ -1,0 +1,14 @@
+Activity 4: Shift Left
+
+Original binary: 111011101011
+→ Decimal: 3819
+
+Shift left by 1:
+  111011101011 → 1110111010110
+
+→ Result in binary: 1110111010110
+→ Decimal: 7638
+
+Observation:
+Shifting left by 1 is equivalent to multiplying by 2.
+3819 × 2 = 7638
