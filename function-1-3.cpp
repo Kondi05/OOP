@@ -1,16 +1,13 @@
-#include <iostream>
-using namespace std;
+#include <iostream>  // Add this line
 
 void count_digits(int array[4][4]) {
-    int counts[10] = {0}; // Initialize all counts to 0
+    int counts[10] = {0};
     for (int i = 0; i < 4; i++) {
         for (int j = 0; j < 4; j++) {
-            int num = array[i][j];
-            if (num >= 0 && num <= 9) counts[num]++;
+            counts[array[i][j]]++;
         }
     }
     for (int i = 0; i < 10; i++) {
-        cout << i << ":" << counts[i] << (i < 9 ? ";" : "");
+        std::cout << i << ":" << counts[i] << ";";  
     }
-    cout << endl;
 }
