@@ -17,9 +17,6 @@ public:
     
     bool addAppliance(Appliance* appliance);
     double getTotalPowerConsumption();
-    
-    // Additional helper methods
-    int get_currentCount() const;
 };
 
 #endif

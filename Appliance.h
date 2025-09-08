@@ -4,19 +4,17 @@
 class Appliance {
 private:
     int powerRating;
-    bool isOnStatus;  
+    bool isOn;
 
 public:
     Appliance();
     Appliance(int powerRating);
-    virtual ~Appliance();  
+    virtual ~Appliance();
     
-    
-    int get_powerRating() const; 
+    int get_powerRating() const;
     void set_powerRating(int rating);
     bool get_isOn() const;
     void set_isOn(bool on);
-    
     
     void turnOn();
     void turnOff();

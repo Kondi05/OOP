@@ -36,7 +36,3 @@ double House::getTotalPowerConsumption() {
     }
     return total;
 }
-
-int House::get_currentCount() const {
-    return currentCount;
-}

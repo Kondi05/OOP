@@ -11,11 +11,8 @@ public:
     Fridge();
     Fridge(int powerRating, double volume);
     
-    
     double getVolume() const;
     void setVolume(double vol);
-    
-    
     double getPowerConsumption() override;
 };
 

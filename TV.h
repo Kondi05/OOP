@@ -11,11 +11,8 @@ public:
     TV();
     TV(int powerRating, double screenSize);
     
-    
     double getScreenSize() const;
     void setScreenSize(double size);
-    
-    
     double getPowerConsumption() override;
 };
 
