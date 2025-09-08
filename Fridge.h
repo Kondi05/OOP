@@ -11,11 +11,11 @@ public:
     Fridge();
     Fridge(int powerRating, double volume);
     
-    // Getters and setters
-    double get_volume() const;
-    void set_volume(double vol);
     
-    // Override virtual function
+    double getVolume() const;
+    void setVolume(double vol);
+    
+    
     double getPowerConsumption() override;
 };
 

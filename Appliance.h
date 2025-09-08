@@ -1,6 +1,3 @@
-#ifndef APPLIANCE_H
-#define APPLIANCE_H
-
 class Appliance {
 private:
     int powerRating;
@@ -10,16 +7,13 @@ public:
     Appliance();
     Appliance(int powerRating);
     
-    // Getters and setters
-    int get_powerRating() const;
-    void set_powerRating(int rating);
-    bool get_isOn() const;
-    void set_isOn(bool on);
     
-    // Member functions
+    int getPowerRating() const;  
+    void setPowerRating(int rating);  
+    bool isOn() const;  
+    void setIsOn(bool on);  
+    
     void turnOn();
     void turnOff();
     virtual double getPowerConsumption();
 };
-
-#endif

@@ -11,11 +11,11 @@ public:
     TV();
     TV(int powerRating, double screenSize);
     
-    // Getters and setters
-    double get_screenSize() const;
-    void set_screenSize(double size);
     
-    // Override virtual function
+    double getScreenSize() const;
+    void setScreenSize(double size);
+    
+    
     double getPowerConsumption() override;
 };
 
