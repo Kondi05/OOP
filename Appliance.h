@@ -12,9 +12,9 @@ public:
     virtual ~Appliance();  
     
     
-    int getPowerRating() const;
-    void setPowerRating(int rating);
-    bool get_isOn() const;  
+    int get_powerRating() const; 
+    void set_powerRating(int rating);
+    bool get_isOn() const;
     void set_isOn(bool on);
     
     

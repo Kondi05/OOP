@@ -6,19 +6,19 @@ Appliance::Appliance(int powerRating) : powerRating(powerRating), isOnStatus(fal
 
 Appliance::~Appliance() {}  // Virtual destructor implementation
 
-int Appliance::getPowerRating() const {
+int Appliance::get_powerRating() const {
     return powerRating;
 }
 
-void Appliance::setPowerRating(int rating) {
+void Appliance::set_powerRating(int rating) {
     powerRating = rating;
 }
 
-bool Appliance::get_isOn() const {  
+bool Appliance::get_isOn() const {
     return isOnStatus;
 }
 
-void Appliance::set_isOn(bool on) {  
+void Appliance::set_isOn(bool on) {
     isOnStatus = on;
 }
 
