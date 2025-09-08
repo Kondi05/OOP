@@ -1,31 +1,33 @@
 #include "Appliance.h"
 
-Appliance::Appliance() : powerRating(0), isOn(false) {}
+Appliance::Appliance() : powerRating(0), isOnStatus(false) {}
 
-Appliance::Appliance(int powerRating) : powerRating(powerRating), isOn(false) {}
+Appliance::Appliance(int powerRating) : powerRating(powerRating), isOnStatus(false) {}
 
-int Appliance::get_powerRating() const {
+Appliance::~Appliance() {}  // Virtual destructor implementation
+
+int Appliance::getPowerRating() const {
     return powerRating;
 }
 
-void Appliance::set_powerRating(int rating) {
+void Appliance::setPowerRating(int rating) {
     powerRating = rating;
 }
 
-bool Appliance::get_isOn() const {
-    return isOn;
+bool Appliance::getIsOn() const {
+    return isOnStatus;
 }
 
-void Appliance::set_isOn(bool on) {
-    isOn = on;
+void Appliance::setIsOn(bool on) {
+    isOnStatus = on;
 }
 
 void Appliance::turnOn() {
-    isOn = true;
+    isOnStatus = true;
 }
 
 void Appliance::turnOff() {
-    isOn = false;
+    isOnStatus = false;
 }
 
 double Appliance::getPowerConsumption() {
