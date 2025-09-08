@@ -14,11 +14,11 @@ void Appliance::setPowerRating(int rating) {
     powerRating = rating;
 }
 
-bool Appliance::getIsOn() const {
+bool Appliance::get_isOn() const {  
     return isOnStatus;
 }
 
-void Appliance::setIsOn(bool on) {
+void Appliance::set_isOn(bool on) {  
     isOnStatus = on;
 }
 

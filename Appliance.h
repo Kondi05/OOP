@@ -14,8 +14,8 @@ public:
     
     int getPowerRating() const;
     void setPowerRating(int rating);
-    bool getIsOn() const;  
-    void setIsOn(bool on);
+    bool get_isOn() const;  
+    void set_isOn(bool on);
     
     
     void turnOn();
