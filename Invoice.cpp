@@ -1,18 +1,20 @@
-#ifndef INVOICE_H
-#define INVOICE_H
-
+#include "Invoice.h"
+#include <stdexcept>
 #include <string>
 
-class Invoice {
-private:
-    std::string invoiceId;
-    int dollarsOwed;
+Invoice::Invoice(const std::string& id) : invoiceId(id), dollarsOwed(0) {}
 
-public:
-    Invoice(const std::string& id);
-    void addServiceCost(int costDollars);
-    int getDollarsOwed() const;
-    std::string getInvoiceId() const;
-};
+void Invoice::addServiceCost(int costDollars) {
+    if (costDollars <= 0) {
+        throw std::invalid_argument("Cost must be a positive dollar amount");
+    }
+    dollarsOwed += costDollars;
+}
 
-#endif
+int Invoice::getDollarsOwed() const {
+    return dollarsOwed;
+}
+
+std::string Invoice::getInvoiceId() const {
+    return invoiceId;
+}
