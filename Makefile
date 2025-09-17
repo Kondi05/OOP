@@ -9,8 +9,8 @@ CXXFLAGS = -std=c++11 -Wall -Wextra
 # Executable name
 TARGET = test_runner
 
-# Source files (without headers)
-SRCS = main.cpp Invoice.cpp
+# Source files (ADD Addition.cpp here!)
+SRCS = main.cpp Invoice.cpp Addition.cpp
 
 # Default target - build and run tests
 all: $(TARGET)
@@ -24,15 +24,4 @@ $(TARGET): $(SRCS)
 clean:
 	rm -f $(TARGET)
 
-# Help target
-help:
-	@echo "Available commands:"
-	@echo "  make all     - Build and run all tests (default)"
-	@echo "  make build   - Build the executable only"
-	@echo "  make clean   - Remove the executable"
-	@echo "  make help    - Show this help message"
-
-# Alias for building without running
-build: $(TARGET)
-
-.PHONY: all clean help build
+.PHONY: all clean
