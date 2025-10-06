@@ -18,7 +18,7 @@ public:
     void read(Records &records) {
         ifstream file(_filename);
         if (!file.is_open()) {
-            return;
+            throw runtime_error("file_error");
         }
         
         string line;
@@ -29,10 +29,12 @@ public:
             }
             catch (const invalid_argument& e) {
                 cout << "invalid_argument error" << endl;
+                file.close();
                 throw;
             }
             catch (const out_of_range& e) {
                 cout << "out_of_range error" << endl;
+                file.close();
                 throw;
             }
         }
@@ -41,20 +43,32 @@ public:
 };
 
 int main(int argc, char* argv[]) {
+    if (argc < 2) {
+        return 1;
+    }
+    
     Records myRecords;
-    string filename = "records.txt";
-    if (argc > 1) filename = argv[1];
+    string filename = argv[1];
 
     try {
         RecordsManager recordM(filename); 
         recordM.read(myRecords);
 
         int sum = 0;
-        for (int i = 0; i < myRecords.size(); i++) {
+        for (size_t i = 0; i < myRecords.size(); i++) {
             sum += myRecords[i];
         }
         cout << sum << endl;
         return 0;
+    }
+    catch (const invalid_argument& e) {
+        return 1;
+    }
+    catch (const out_of_range& e) {
+        return 1;
+    }
+    catch (const exception& e) {
+        return 1;
     }
     catch (...) {
         return 1;
