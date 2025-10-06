@@ -15,14 +15,13 @@ private:
 public:
     RecordsManager(string filename) : _filename(filename) {}
     
-    // Update read function with exception handling
     void read(Records &records) {
         _file.open(_filename, ios::in);
+        if (!_file.is_open()) {
+            throw runtime_error("Unable to open file");
+        }
+        
         try {
-            if (!_file.is_open()) {
-                throw runtime_error("Unable to open file");
-            }
-            
             string line;
             int lineNumber = 0;
             
@@ -33,25 +32,20 @@ public:
                     records.push_back(value);
                 }
                 catch (const invalid_argument& e) {
-                    _file.close();
                     cout << "invalid_argument error" << endl;
                     throw; // Re-throw to propagate to main
                 }
                 catch (const out_of_range& e) {
-                    _file.close();
                     cout << "out_of_range error" << endl;
                     throw; // Re-throw to propagate to main
                 }
             }
-            _file.close();
         }
         catch (...) {
-            // Catch any other exceptions and ensure file is closed
-            if (_file.is_open()) {
-                _file.close();
-            }
-            throw; // Re-throw to main
+            _file.close();
+            throw;
         }
+        _file.close();
     }
 };
 
@@ -71,8 +65,11 @@ int main(int argc, char* argv[]) {
         cout << sum << endl;
     }
     catch (const exception& e) {
-        // This will catch any propagated exceptions
-        // e.what() contains the error message
+        // Catch any propagated exceptions
+        return 1; // Return error code
+    }
+    catch (...) {
+        // Catch any other exceptions
         return 1; // Return error code
     }
     
