@@ -10,53 +10,38 @@ typedef vector<int> Records;
 
 class RecordsManager {
 private:
-    fstream _file;
     string _filename;
 
 public:
     RecordsManager(string filename) : _filename(filename) {}
 
-    // Update read function with exception handling
     void read(Records &records) {
-        _file.open(_filename, ios::in);
-
-        try {
-            if (!_file.is_open())
-            {
-                throw runtime_error("Unable to open file");
-            }
-            
-            string line;
-            while (getline(_file, line)) {
-                try {
-                    int value = stoi(line);
-                    records.push_back(value);
-                }
-                catch (const invalid_argument& e) {
-                    cout << "invalid_argument error" << endl;
-                    _file.close();
-                    throw;
-                }
-                catch (const out_of_range& e) {
-                    cout << "out_of_range error" << endl;
-                    _file.close();
-                    throw;
-                }
-            }
-            _file.close();
+        ifstream file(_filename);
+        if (!file.is_open()) {
+            return;
         }
-        catch (...) {
-            if (_file.is_open()) {
-                _file.close();
+        
+        string line;
+        while (getline(file, line)) {
+            try {
+                int value = stoi(line);
+                records.push_back(value);
             }
-            throw;
+            catch (const invalid_argument& e) {
+                cout << "invalid_argument error" << endl;
+                throw;
+            }
+            catch (const out_of_range& e) {
+                cout << "out_of_range error" << endl;
+                throw;
+            }
         }
+        file.close();
     }
 };
 
 int main(int argc, char* argv[]) {
     Records myRecords;
-
     string filename = "records.txt";
     if (argc > 1) filename = argv[1];
 
@@ -69,10 +54,9 @@ int main(int argc, char* argv[]) {
             sum += myRecords[i];
         }
         cout << sum << endl;
+        return 0;
     }
-    catch (const exception& e) {
+    catch (...) {
         return 1;
     }
-
-    return 0;
 }
